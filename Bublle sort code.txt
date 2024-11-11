@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n = 5;  // Size of the array
+    int arr[n] = {64, 34, 25, 12, 22};  // Array to be sorted
+
+    // Print the array before sorting
+    cout << "Before sorting: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";  // Print each element of the array
+    }
+    cout << endl;
+
+    // Bubble Sort algorithm (Outer loop runs n-1 times)
+    for (int j = 0; j < n-1; j++) {  // Outer loop: runs n-1 times
+        // Inner loop: compares adjacent elements
+        for (int i = 0; i < n-1-j; i++) {  // Inner loop compares adjacent elements
+            if (arr[i] > arr[i+1]) {
+                // If not sorted, swap the elements
+                int temp = arr[i];  // Temporary variable to hold arr[i]
+                arr[i] = arr[i+1];  // Swap arr[i] and arr[i+1]
+                arr[i+1] = temp;  // Assign temp value to arr[i+1]
+
+                // Print the swap operation
+                cout << "Swap: " << arr[i] << " with " << arr[i+1] << endl;
+            } else {
+                // If no swap needed
+                cout << "No swap: " << arr[i] << " and " << arr[i+1] << endl;
+            }
+        }
+    }
+
+    // Print the array after sorting
+    cout << "After sorting: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";  // Print each element of the sorted array
+    }
+    cout << endl;
+
+    return 0;  // End of the program
+}
